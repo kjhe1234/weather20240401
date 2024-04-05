@@ -20,9 +20,11 @@ todayTempText = weatherSoup.find("div", {"class":"temperature_text"}).text
 todayTempText = todayTempText[6:12].strip()  # 6번째 글자부터 슬라이싱 후 양쪽 공백 제거
 print(f"현재온도 : {todayTempText}")
 
-yesterdayTempText = weatherSoup.find("span", {"class":"temperature up"}).text
+#yesterdayTempText = weatherSoup.find("span", {"class":"temperature"}).text
 #어제와의 온도 비교
-yesterdayTempText = yesterdayTempText.strip()
+#yesterdayTempText = yesterdayTempText.strip()
+yesterdayTempText = weatherSoup.find("p", {"class":"summary"}).text
+yesterdayTempText = yesterdayTempText[:15].strip()
 print(f"어제와 온도비교 : {yesterdayTempText}")
 
 todayWeatherText = weatherSoup.find("span", {"class":"weather before_slash"}).text
@@ -39,6 +41,7 @@ todayInfoText = weatherSoup.select("ul.today_chart_list>li")
 # 미세먼지, 초미세먼지,자외선,일몰 이 있는 리스트
 #print(todayInfoText[0])
 #todayInfoText 에서 첫번째 리스트 확인
+
 dust1Info = todayInfoText[0].find("span", {"class":"txt"}).text
 #미세먼지 정보
 dust1Info = dust1Info.strip()
