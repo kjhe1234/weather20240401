@@ -22,7 +22,8 @@ class WeatherApp(QMainWindow, form_class):
         self.statusBar().showMessage("Weather Search App Ver 0.5")
         self.setWindowFlags(Qt.WindowStaysOnTopHint)
         # 윈도우를 항상 맨위로 유지
-
+        self.reflashTimer()
+        # 프로그램 실행시 자동으로 현재 위치 날씨 검색 및 리프레시
 
         #self.search_btn.clicked.connect(self.weather_search)
         self.search_btn.clicked.connect(self.reflashTimer)
