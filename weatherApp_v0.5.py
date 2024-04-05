@@ -93,6 +93,10 @@ class WeatherApp(QMainWindow, form_class):
             weatherImage = QPixmap("icon/cloud.png")  # 이미지 불러와서 저장하기
             self.weather_img.setPixmap(QPixmap(weatherImage))
 
+        elif weatherText == "흐림":
+            weatherImage = QPixmap("icon/cloud.png")  # 이미지 불러와서 저장하기
+            self.weather_img.setPixmap(QPixmap(weatherImage))
+
         elif weatherText == "비":
             weatherImage = QPixmap("icon/rain.png")  # 이미지 불러와서 저장하기
             self.weather_img.setPixmap(QPixmap(weatherImage))
@@ -100,7 +104,6 @@ class WeatherApp(QMainWindow, form_class):
         elif weatherText == "눈":
             weatherImage = QPixmap("icon/snow.png")  # 이미지 불러와서 저장하기
             self.weather_img.setPixmap(QPixmap(weatherImage))
-
 
         else:
             self.weather_img.setText(weatherText)
